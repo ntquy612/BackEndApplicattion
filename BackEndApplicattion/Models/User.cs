@@ -1,12 +1,19 @@
-﻿namespace BackEndApplicattion.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BackEndApplicattion.Models
 {
     public class User
     {
         public Guid Id { get; set; }
+        [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; } = default!;
+        [Required(ErrorMessage = "Email is required")]
         public string Email { get; set; } = default!;
-        public string Password { get; set; } = default!;
+        [Required(ErrorMessage = "UserName is required")]
         public string UserName { get; set; } = default!;
+        [Required(ErrorMessage = "Password is required")]
+        public string Password { get; set; } = default!;
+        [Required(ErrorMessage = "Address is required")]
         public string Address { get; set; } = default!;
         public bool IsAdmin { get; set; } = default!;
         public bool IsActive { get; set; } = default!;
@@ -24,5 +31,6 @@
             this.IsAdmin = IsAdmin;
             this.IsDelete = IsDelete;
         }
+
     }
 }
